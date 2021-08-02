@@ -19,13 +19,22 @@ def isEnableDevideYoukanWithM(A:List[int],K:int ,M:int)->bool:
     return True
 
 def calMaxYoukanLength(N:int, L:int, K:int, A:List[int]) -> int:
-    
-    pass
+    ng = -1
+    ok = L
+
+    while (abs(ok - ng) > 1):
+        mid = (ok + ng) // 2
+
+        if isEnableDevideYoukanWithM(A, K, mid):
+            ok = mid
+        else:
+            ng = mid
+    return ok
 
 if __name__ == "__main__":
     N, L = map(int, input().split())
     K = int(input())
 
-    A = map(int, input().split())
+    A = list(map(int, input().split()))
 
-    print(calMaxYoukanLength(N, L, L, A))
+    print(calMaxYoukanLength(N, L, K, A))
