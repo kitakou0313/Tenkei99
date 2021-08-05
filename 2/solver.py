@@ -3,7 +3,7 @@ from typing import List
 
 def generateAllKakko(N:int) -> List[str]:
     """
-    docstring
+    括弧の数一つ毎に再帰的につくれば良さそう
     """
     pass
 
